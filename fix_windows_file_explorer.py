@@ -1,16 +1,17 @@
 import argparse
-import platform
 import winreg
 import json
 
-def edit_reg(keys, key_paths, operation="delete"):
+def edit_reg(keys, key_paths, operation="delete", architecture=64):
     """creates or deletes registry values"""
-    # get system info
-    bitness = platform.architecture()[0]
-    if(bitness == '32bit'):
-        other_view_flag = winreg.KEY_WOW64_64KEY
-    elif(bitness == '64bit'):
+
+    if(architecture == 32):
         other_view_flag = winreg.KEY_WOW64_32KEY
+    elif(architecture == 64):
+        other_view_flag = winreg.KEY_WOW64_64KEY
+    else:
+        print("unsupported architecture")
+        return
 
     for key in keys:
         for index, key_path in enumerate(key_paths):
@@ -36,26 +37,26 @@ def read_cfg_file(path):
         return 0
 
 
-def main(cfg_path = "keys.cfg"):
+def main():
     parser = argparse.ArgumentParser(prog = "fix win file explorer")
     parser.add_argument("-o", '--operation', dest='operation', type=str, help='pass create or delete', choices=['create', 'delete'], required=True)
-    parser.add_argument("-c", '--cfg_path', dest='cfg_path', type=str, help='config file path', required=False)
+    parser.add_argument("-c", '--cfg_path', dest='cfg_path', type=str, help='config file path', required=False, default="keys.cfg")
+    parser.add_argument("-a", '--architecture', dest='architecture', type=int, help='system architecture', required=False, default=64)
     args = parser.parse_args()
     operation = args.operation
 
-    if(args.cfg_path):
-        cfg_path = args.cfg_path
-    cfg_dict = read_cfg_file(cfg_path)
+    cfg_dict = read_cfg_file(args.cfg_path)
 
     if(not cfg_dict):
         print("cfg file is broken")
         return
         
+    
     keys = cfg_dict["keys"]
     key_paths = cfg_dict["key_paths"]
 
     # run reg editor
-    edit_reg(keys, key_paths, operation=operation)
+    edit_reg(keys, key_paths, operation=operation, architecture=args.architecture)
 
 
 
