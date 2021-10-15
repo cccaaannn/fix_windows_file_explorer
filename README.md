@@ -2,7 +2,7 @@
 ---
 Removes the bloat from file explorer.
 
-![](https://img.shields.io/github/repo-size/cccaaannn/fix_windows_file_explorer?style=flat-square) [![GitHub license](https://img.shields.io/github/license/cccaaannn/fix_windows_file_explorer?style=flat-square)](https://github.com/cccaaannn/fix_windows_file_explorer/blob/master/LICENSE)
+![GitHub top language](https://img.shields.io/github/languages/top/cccaaannn/fix_windows_file_explorer?style=flat-square) ![](https://img.shields.io/github/repo-size/cccaaannn/fix_windows_file_explorer?style=flat-square) [![GitHub license](https://img.shields.io/github/license/cccaaannn/fix_windows_file_explorer?style=flat-square)](https://github.com/cccaaannn/fix_windows_file_explorer/blob/master/LICENSE)
 
 
 ## Remember this trash
@@ -10,16 +10,29 @@ Removes the bloat from file explorer.
 </br>
 </br>
 
-### Run this on a administrator command prompt to remove the trash
+
+### Run the binary to remove the trash (windows security detects this as virus since it edits registry)
 ```shell
-python fix_windows_file_explorer.py -o delete
+fix_windows_file_explorer.exe
+```
+</br>
+
+### Or run this on a administrator command prompt
+```shell
+python fix_windows_file_explorer.py
 ```
 </br>
 
 ### If you want your trash back
 ```shell
+fix_windows_file_explorer.exe -o create
+```
+or
+
+```shell
 python fix_windows_file_explorer.py -o create
 ```
+
 ---
 </br>
 
