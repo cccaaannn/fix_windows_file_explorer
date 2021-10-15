@@ -39,7 +39,7 @@ def read_cfg_file(path):
 
 def main():
     parser = argparse.ArgumentParser(prog = "fix win file explorer")
-    parser.add_argument("-o", '--operation', dest='operation', type=str, help='pass create or delete', choices=['create', 'delete'], required=True)
+    parser.add_argument("-o", '--operation', dest='operation', type=str, help='pass create or delete', choices=['create', 'delete'], required=False, default="delete")
     parser.add_argument("-c", '--cfg_path', dest='cfg_path', type=str, help='config file path', required=False, default="keys.cfg")
     parser.add_argument("-a", '--architecture', dest='architecture', type=int, help='system architecture', required=False, default=64)
     args = parser.parse_args()
