@@ -2,7 +2,7 @@
 ---
 Removes the bloat from file explorer.
 
-![GitHub top language](https://img.shields.io/github/languages/top/cccaaannn/fix_windows_file_explorer?style=flat-square) ![](https://img.shields.io/github/repo-size/cccaaannn/fix_windows_file_explorer?style=flat-square) [![GitHub license](https://img.shields.io/github/license/cccaaannn/fix_windows_file_explorer?style=flat-square)](https://github.com/cccaaannn/fix_windows_file_explorer/blob/master/LICENSE)
+![GitHub top language](https://img.shields.io/github/languages/top/cccaaannn/fix_windows_file_explorer?style=flat-square) ![](https://img.shields.io/github/repo-size/cccaaannn/fix_windows_file_explorer?style=flat-square) [![GitHub license](https://img.shields.io/github/license/cccaaannn/fix_windows_file_explorer?style=flat-square)](https://github.com/cccaaannn/fix_windows_file_explorer/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/v/release/cccaaannn/fix_windows_file_explorer?style=flat-square)](https://github.com/cccaaannn/fix_windows_file_explorer/releases?style=flat-square)
 
 
 ## Remember this trash
